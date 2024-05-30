@@ -1,26 +1,25 @@
 import React from 'react';
-import './style.css';
+import 'styles/components/header.sass';
 
 function Header() {
-
     return(
         <header className="header">
-            <h1>Eduardo Thiaki Yoshida</h1>
+            <h1><span>Eduardo</span> <span>Thiaki</span></h1>
             <ul>
                 <Items href="#about" name="Sobre" />
                 <Items href="#skills" name="Tecnologias" />
-                <Items href="#portfolio" name="Portifólio" />
                 <Items href="#trainings" name="Formações" />
                 <Items href="#courses" name="Cursos" />
                 <Items href="#experience" name="Experiência" />
             </ul>
+            <button>Fale comigo &gt; </button>
         </header>
     )
 }
 
-const Items = (props) => {
+const Items = ( {href, name} ) => {
     return(
-        <li><a href={props.href}>{props.name}</a></li>
+        <li><a href={href}>{name}</a></li>
     )
 }
 

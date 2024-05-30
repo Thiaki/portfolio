@@ -1,0 +1,12 @@
+@use 'variables'
+
+@mixin mq($width, $type: min)
+    @if $type == max
+        $width: $width - 1px
+    @media only screen and (#{$type}-width: $width)
+        @content
+
+@mixin text($size, $weight: 400, $color: #FFF)
+    font-size: $size
+    font-weight: $weight
+    color: $color
