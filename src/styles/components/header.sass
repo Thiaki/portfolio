@@ -4,7 +4,12 @@
 .header
     display: block
     text-align: center
-    padding: 20px 50px
+    position: fixed
+    background-color: variables.$dark-blue
+    z-index: 10
+    width: 100%
+    border-bottom: 2px solid variables.$white
+    @include mixins.containerPadding()
     @include mixins.mq(550px)
         display: flex
         justify-content: space-between
@@ -19,13 +24,14 @@
         letter-spacing: 2px
 
     button
+        font-family: variables.$primary-font
         padding: 10px 20px
         border-radius: 8px
         border: none
         position: relative
         z-index: 1
         cursor: pointer
-        @include mixins.text($size: 18px, $color: variables.$black)
+        @include mixins.text($size: 16px, $weight: 600, $color: variables.$black)
         &:before
             position: absolute
             border-radius: 8px
@@ -41,11 +47,12 @@
         &:hover:before
             color: white
             width: 100%
-
+        @include mixins.mq($width: 769px)
+            @include mixins.text($size: 18px, $weight: 600, $color: variables.$black)
 
     ul
         display: none
-        @include mixins.mq(1000px)
+        @include mixins.mq(1026px)
             display: flex
             flex-wrap: wrap
             justify-content: center
