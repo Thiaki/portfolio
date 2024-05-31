@@ -1,18 +1,20 @@
 import React from 'react';
 
-import './styles/main.sass';
-import Header from './components/header';
-import About from './components/about';
-import Experience from './components/experience';
-import Courses from './components/courses';
-import Skills from './components/skills';
-import Trainings from './components/trainings';
+import 'styles/main.sass';
+import Header from 'components/Header';
+import MainBanner from 'components/MainBanner';
+import About from 'components/About';
+import Experience from 'components/Experience';
+import Courses from 'components/Courses';
+import Skills from 'components/Skills';
+import Trainings from 'components/Trainings';
 
 function App() {
 
   return(
     <div className="App">
       <Header />
+      <MainBanner />
       <About />
       <Skills />
       <Trainings />
