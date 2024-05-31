@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './styles/main.sass';
-import Header from './components/Header';
+import 'styles/main.sass';
+import Header from 'components/Header0';
 import MainBanner from 'components/MainBanner';
-import About from './components/About';
-import Experience from './components/Experience';
-import Courses from './components/Courses';
-import Skills from './components/Skills';
-import Trainings from './components/Trainings';
+import About from 'components/About0';
+import Experience from 'components/Experience0';
+import Courses from 'components/Courses0';
+import Skills from 'components/Skills0';
+import Trainings from 'components/Trainings0';
 
 function App() {
 
