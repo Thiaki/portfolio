@@ -1,12 +1,13 @@
 import React from 'react';
-import './style.css';
 
-function Skills() {
+import 'styles/components/skills.sass'
+
+const Skills = () => {
 
     return(
-        <div id='skills'>
-            <h1>Tecnologias</h1>
-        </div>
+        <section id='skills' className='container container-skills'>
+            <h3 className='title-container'> Tecnologias <hr /> </h3>
+        </section>
     )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'styles/components/header.sass';
 
-function Header() {
+const Header = () => {
     return(
         <header className="header">
             <h1>Eduardo Thiaki</h1>
