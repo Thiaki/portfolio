@@ -1,6 +1,36 @@
 @use '../variables'
 @use '../mixins'
 
-.about
-    @include mixins.containerPadding()
-    
+.container-about
+    .about
+        width: 100%
+        @include mixins.displayFlex($justify-content: flex-start, $width: 992px)
+        flex-direction: column-reverse
+        gap: 5%
+
+        .text-about
+            width: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            text-align: left
+            margin-top: 15px
+            @include mixins.text($size: 16px)
+            @include mixins.mq(992px)
+                width: 50%
+                margin-top: 0
+            @include mixins.mq(1024px)
+                @include mixins.text($size: 18px)
+        
+        .image-about
+            width: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            @include mixins.mq(992px)
+                width: 40%            
+
+            .profile-image
+                width: 100%
+                max-width: 500px
+                border-radius: 16px

@@ -8,7 +8,7 @@
     background-color: variables.$dark-blue
     z-index: 10
     width: 100%
-    @include mixins.containerPadding()
+    @include mixins.grid()
     @include mixins.mq(550px)
         display: flex
         justify-content: space-between
@@ -16,11 +16,16 @@
 
     h1
         font-family: variables.$secondary-font
-        @include mixins.text($size: 55px, $weight: 700)
+        @include mixins.text($size: 45px, $weight: 700)
         background: variables.$background-linear-button
         background-clip: text
         color: transparent
         letter-spacing: 2px
+        @include mixins.mq(550px)
+            @include mixins.text($size: 55px, $weight: 700)
+            background: variables.$background-linear-button
+            background-clip: text
+            color: transparent
 
     button
         font-family: variables.$primary-font
@@ -30,7 +35,7 @@
         position: relative
         z-index: 1
         cursor: pointer
-        @include mixins.text($size: 16px, $weight: 600, $color: variables.$black)
+        @include mixins.text($size: 14px, $weight: 600, $color: variables.$black)
         &:before
             position: absolute
             border-radius: 8px
@@ -60,28 +65,24 @@
             list-style-type: none
 
         li
-            margin: 2px auto
-            font-weight: 600
             display: inline
+            margin: 2px auto
+            @include mixins.text($size: 14px, $weight: 600)
 
             a
                 text-decoration: none
                 color: variables.$white
                 cursor: pointer
+                margin: 0 10px
+                position: relative
                 &:hover
-                    transition: color 0.3s, border 0.1s
                     color: variables.$font-medium-blue
-
-            &:nth-child(-n+3)
-                width: 50%
-                margin-right: auto
-                @include mixins.mq(768px)
-                    width: auto
-                    margin: 0 10px
-
-            &:nth-child(n+4)
-                width: 50%
-                margin-left: auto
-                @include mixins.mq(768px)
-                    width: auto
-                    margin: 0 10px
+                &:before
+                    content: ""
+                    position: absolute
+                    border-bottom: 2px solid variables.$font-medium-blue
+                    width: 0
+                    height: 100%
+                    transition: all .3s linear
+                &:hover:before
+                    width: 100%

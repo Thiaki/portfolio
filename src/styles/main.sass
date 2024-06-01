@@ -1,4 +1,5 @@
 @use 'variables'
+@use 'mixins'
     
 body
   font-family: variables.$primary-font
@@ -11,13 +12,22 @@ html
   scroll-behavior: smooth
 
 *
-    margin: 0
-    padding: 0
-    box-sizing: border-box
+  margin: 0
+  padding: 0
+  box-sizing: border-box
 
-.App
-    h1
-    font-size: 24px
+.container
+  @include mixins.grid()
+  text-align: center
 
-    li
-    font-size: 14px
+  .title-container
+    @include mixins.text($size: 35px, $weight: 600)
+    margin-bottom: 20px
+    display: inline-block
+    @include mixins.mq(550px)
+      @include mixins.text($size: 45px, $weight: 600)
+    
+    hr
+      border: none
+      border-bottom: 10px solid variables.$font-light-blue
+      width: 60px

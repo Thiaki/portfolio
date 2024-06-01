@@ -9,7 +9,7 @@ import imageEmail from 'images/email.png'
 const MainBanner = () => {
 
     return (
-        <section className='banner'>
+        <section className='container-banner'>
             <h2> <span className='dev'>DES</span>ENVOLVEDOR <br /> <span className='front'>FRONT-END</span> </h2>
             <div className='social-icons'>
                 <Items src={imageGitHub} name='github' link={"https://github.com/Thiaki"} />
