@@ -5,7 +5,7 @@ import imageMe from 'images/me.jpg';
 
 const About = (props) => {
     return(
-        <section id='about' className='container container-about'>
+        <section id='about' className='container container-about hidden'>
             <h3 className='title-container'> Sobre <hr /> </h3>
             <div className='about'>
                 <div className='text-about'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import 'styles/main.sass';
 import Header from 'components/Header';
@@ -10,6 +10,32 @@ import Skills from 'components/Skills';
 import Trainings from 'components/Trainings';
 
 function App() {
+
+  useEffect(() => {
+    const createObserver = () => {
+      const callbackFunction = (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        });
+      };
+  
+      const options = {
+        threshold: 0.2
+      };
+  
+      const observer = new IntersectionObserver(callbackFunction, options);
+  
+      document.querySelectorAll('.hidden').forEach(el => {
+        observer.observe(el);
+      });
+    };
+  
+    createObserver();
+  }, []);   
 
   return(
     <div className="App">
