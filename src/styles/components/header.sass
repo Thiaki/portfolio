@@ -4,7 +4,8 @@
 .header
     display: block
     text-align: center
-    position: fixed
+    position: sticky
+    top: 0
     background-color: variables.$dark-blue
     z-index: 10
     width: 100%
@@ -17,28 +18,29 @@
     h1
         font-family: variables.$secondary-font
         @include mixins.text($size: 45px, $weight: 700)
-        background: variables.$background-linear-button
+        background: variables.$background-linear
         background-clip: text
         color: transparent
         letter-spacing: 2px
         @include mixins.mq(550px)
             @include mixins.text($size: 55px, $weight: 700)
-            background: variables.$background-linear-button
+            background: variables.$background-linear
             background-clip: text
             color: transparent
 
     button
         font-family: variables.$primary-font
         padding: 10px 20px
-        border-radius: 8px
+        border-radius: 16px
         border: none
         position: relative
         z-index: 1
         cursor: pointer
+        overflow: hidden
         @include mixins.text($size: 14px, $weight: 600, $color: variables.$black)
         &:before
             position: absolute
-            border-radius: 8px
+            border-radius: 16px
             border: none
             content: ""
             top: 0
@@ -46,10 +48,9 @@
             width: 0
             z-index: -1
             height: 100%
-            background: variables.$background-linear-button
+            background: variables.$background-linear
             transition: all .3s ease-out
         &:hover:before
-            color: white
             width: 100%
         @include mixins.mq($width: 769px)
             @include mixins.text($size: 18px, $weight: 600, $color: variables.$black)
