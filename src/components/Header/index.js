@@ -9,9 +9,7 @@ const Header = () => {
                 <ul>
                     <Items href="#about" name="Sobre" />
                     <Items href="#skills" name="Tecnologias" />
-                    <Items href="#trainings" name="Formações" />
-                    <Items href="#courses" name="Cursos" />
-                    <Items href="#experience" name="Experiência" />
+                    <Items href="#contacts" name="Contatos" />
                 </ul>
             </nav>
             <button>Fale comigo &gt; </button>
