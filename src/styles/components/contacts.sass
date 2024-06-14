@@ -1,0 +1,62 @@
+@use '../variables'
+@use '../mixins'
+    
+.container-contacts
+    @include mixins.grid()
+
+    .form-contacts
+        display: grid
+        grid-template-columns: 1fr
+        gap: 20px
+        @include mixins.mq(550px)
+            grid-template-columns: repeat(2, 1fr)
+        
+        button
+            background: variables.$background-linear
+            border: none
+            border-radius: 16px
+            width: 150px
+            padding: 10px
+            color: variables.$white
+            cursor: pointer
+            &:hover
+                transition: 0.3s
+                scale: 0.9
+
+        div
+            display: flex
+            flex-direction: column
+            gap: 10px 0
+            text-align: left
+
+            label
+                cursor: pointer
+        
+        .full-width
+            grid-column: span 1
+            @include mixins.mq(550px)
+                grid-column: span 2
+
+        .form-button
+            display: flex
+            align-items: end
+
+
+        .form-textarea
+            min-height: 150px !important
+        
+        .form-input
+                background-color: transparent
+                border: 2px solid variables.$white
+                border-radius: 6px
+                padding: 15px
+                outline: none
+                color: variables.$white
+                min-height: 50px
+                &:focus
+                    transition: .5s
+                    border: 2px solid #0a0c0d
+                    color: variables.$dark-blue
+                    background-color: white
+                &::placeholder
+                    color: variables.$white
