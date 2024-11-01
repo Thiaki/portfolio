@@ -2,6 +2,7 @@
 @use '../mixins'
     
 .header
+    @include mixins.grid()
     display: block
     text-align: center
     position: sticky
@@ -9,24 +10,26 @@
     background-color: variables.$dark-blue
     z-index: 10
     width: 100%
-    @include mixins.grid()
+    padding-bottom: 20px
     @include mixins.mq(550px)
         display: flex
         justify-content: space-between
         align-items: center
-
-    h1
-        font-family: variables.$secondary-font
-        @include mixins.text($size: 45px, $weight: 700)
-        background: variables.$background-linear
-        background-clip: text
-        color: transparent
-        letter-spacing: 2px
-        @include mixins.mq(550px)
-            @include mixins.text($size: 55px, $weight: 700)
+    
+    a
+        text-decoration: none 
+        h1
+            font-family: variables.$secondary-font
+            @include mixins.text($size: 45px, $weight: 700)
             background: variables.$background-linear
             background-clip: text
             color: transparent
+            letter-spacing: 2px
+            @include mixins.mq(550px)
+                @include mixins.text($size: 55px, $weight: 700)
+                background: variables.$background-linear
+                background-clip: text
+                color: transparent
 
     button
         font-family: variables.$primary-font
@@ -37,7 +40,11 @@
         z-index: 1
         cursor: pointer
         overflow: hidden
-        @include mixins.text($size: 14px, $weight: 600, $color: variables.$black)
+        a
+            text-decoration: none
+            @include mixins.text($size: 14px, $weight: 600, $color: variables.$black)
+            @include mixins.mq($width: 769px)
+                @include mixins.text($size: 18px, $weight: 600, $color: variables.$black)
         &:before
             position: absolute
             border-radius: 16px
@@ -52,8 +59,7 @@
             transition: all .3s ease-out
         &:hover:before
             width: 100%
-        @include mixins.mq($width: 769px)
-            @include mixins.text($size: 18px, $weight: 600, $color: variables.$black)
+        
 
     ul
         display: none

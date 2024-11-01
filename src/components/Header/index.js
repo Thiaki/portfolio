@@ -1,18 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import 'styles/components/header.sass';
 
 const Header = () => {
     return(
         <header className="header">
-            <h1>Eduardo Thiaki</h1>
+            <Link to={'/'}>
+                <h1>Eduardo Thiaki</h1>
+            </Link>
             <nav>
                 <ul>
-                    <Items href="#about" name="Sobre" />
-                    <Items href="#skills" name="Tecnologias" />
-                    <Items href="#contacts" name="Contatos" />
+                    <Items href="/#about" name="Sobre" />
+                    <Items href="/#skills" name="Tecnologias" />
+                    <Items href="/#contacts" name="Contatos" />
                 </ul>
             </nav>
-            <button>Fale comigo &gt; </button>
+            <button>
+                <Link to='contatos'>Fale comigo &gt;</Link>
+            </button>
         </header>
     )
 }
