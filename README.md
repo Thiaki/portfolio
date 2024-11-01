@@ -8,7 +8,7 @@ Este portfólio foi criado com o objetivo de destacar minhas habilidades em dese
 
 ### Instalação e Uso
 - Clone este repositório em sua máquina local usando git clone https://github.com/Thiaki/portfolio.git.
--  Navegue até o diretório do projeto usando cd portfolio.
+- Navegue até o diretório do projeto usando cd portfolio.
 - Instale as dependências usando npm install.
 - Instale as dependências da estilização SASS usando npm install sass.
 - Inicie o servidor de desenvolvimento usando npm start.
